@@ -23,5 +23,20 @@ export const Header = () => {
     </header>
     `
 
+    const btn = element.querySelector('.nav-btn');
+    btn.addEventListener('click', () => {
+        const rollout = element.querySelector('.rollout-nav');
+        if (rollout.classList.contains('nav-closed')) {
+            rollout.classList.remove('nav-closed');
+        } else {
+            rollout.classList.add('nav-closed');
+        };
+
+        rollout.addEventListener('click', () => {
+            rollout.classList.add('nav-closed');
+        });
+
+    });
+
     return element
 };
